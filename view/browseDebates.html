@@ -1,0 +1,9 @@
+<div class="container-fluid" ng-controller="BrowseDebatesController">
+<h1>On going Debates</h1>
+<div class="row table-row-group panel panel-default" style="background-color:lavenderblush;" ng-repeat="thisdebate in allDebates">
+<a href="">
+<div class="col-sm-4" ><h3>{{thisdebate.question}}</h3></div>
+<div class="col-sm-8" ><h4>{{thisdebate.content.desc}}</h4></div>
+</a>
+</div>
+</div>

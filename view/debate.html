@@ -1,0 +1,28 @@
+<div class="table" ng-controller="DebateController">
+	<div class="panel panel-primary">
+		<div class="panel-success" ng-show="currentDebate.question">{{currentDebate.question}}</div>
+		<div class="panel-body" ng-show="currentDebate.desc">{{currentDebate.desc}}</div>
+	</div>
+	<div style="float: left; width: 50%;">
+		<div class="panel panel-default">
+			<div class="panel-heading">FOR</div>
+			<div class="jumbotron">Panel Content</div>
+		<label for="comment">Make your argument:</label>
+			<div class="form-group input-group">
+				<textarea class="form-control" rows="3" id="comment"></textarea>
+				<span class="input-group-addon btn btn-success">Enter</span>
+			</div>
+		</div>
+	</div>
+	<div style="float: left; width: 50%;">
+		<div class="panel panel-default">
+			<div class="panel-heading">AGAINST</div>
+			<div class="jumbotron">Panel Content</div>
+			<label for="comment">Make your argument:</label>
+			<div class="form-group input-group">
+				<textarea class="form-control" rows="3" id="comment"></textarea>
+				<span class="input-group-addon btn btn-success">Enter</span>
+			</div>
+		</div>
+	</div>
+</div>
