@@ -1,7 +1,7 @@
 <div class="table" ng-controller="DebateController">
 	<div class="panel panel-primary">
-		<div class="panel-success" ng-show="currentDebate.question">{{currentDebate.question}}</div>
-		<div class="panel-body" ng-show="currentDebate.desc">{{currentDebate.desc}}</div>
+		<div class="panel-success" ng-show="currentDebate.question"><h2>{{currentDebate.question}}</h2></div>
+		<div class="panel-body" ng-show="currentDebate.content.desc"><h4>{{currentDebate.content.desc}}</h4></div>
 	</div>
 	<div style="float: left; width: 50%;">
 		<div class="panel panel-default">

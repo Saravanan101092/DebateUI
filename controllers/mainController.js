@@ -5,14 +5,15 @@
  * Debate controller
  */
 
-app.controller('MainController',['$http','$scope',function($http, $scope){
-	console.log("inside debate controller");
+app.controller('MainController',['$http','$scope','$location',function($http, $scope,$location){
+	console.log("inside main controller");
 	$scope.debate={};
 	$scope.submitDebate= function(){
 		console.log("inside submit debate method:" + JSON.stringify($scope.debate));
 		var result = $http.post('http://localhost:8087/saru/debates',$scope.debate).then(function(response){
 			console.log("response object:"+JSON.stringify(response));
-			$scope.resultdebate=response.data;
+			$scope.currentDebate=response.data;
+			$location.path('/debate/:id'+response.data._id);
 		});
 	console.log("response is"+JSON.stringify($scope.resultdebate));
 	}
