@@ -1,17 +1,17 @@
 app.controller('DebateController',['$http','$scope', '$location','$routeParams',function($http,$scope,$location,$routeParams){
 	console.log("inside debate controller");
 	$http.get('http://localhost:8087/saru/debates/'+$routeParams.debateId).then(function(response){
-		console.log("response for debateid:"+JSON.stringify(response));
+		//console.log("response for debateid:"+JSON.stringify(response));
 		$scope.currentDebate = response.data[0];
 	});
 	
 	$http.get('http://localhost:8087/saru/debate/'+$routeParams.debateId+'/arguments/N').then(function(response){
-		console.log("response for debateid and proINd N:"+JSON.stringify(response));
+		//console.log("response for debateid and proINd N:"+JSON.stringify(response));
 		$scope.currentNArgs =[];
 		$scope.currentNArgs = response.data;
 	});
 	$http.get('http://localhost:8087/saru/debate/'+$routeParams.debateId+'/arguments/Y').then(function(response){
-		console.log("response for debateid and proINd Y:"+JSON.stringify(response));
+		//console.log("response for debateid and proINd Y:"+JSON.stringify(response));
 		$scope.currentPArgs =[];
 		$scope.currentPArgs = response.data;
 	});
@@ -26,19 +26,18 @@ app.controller('DebateController',['$http','$scope', '$location','$routeParams',
 		argument.content.supports = 0;
 		argument.content.disputes = 0;
 		argument.content.proInd = pInd;
-		console.log("argument to be added:"+JSON.stringify(argument));
+
 		var result = $http.post('http://localhost:8087/saru/arguments',argument).then(function(response){
-			console.log("response object:"+JSON.stringify(response));
-			if($scope.currentArgument.content.proInd=='Y'){
-			if($scope.currentPArgs =='undefined'){
-				$scope.currentPArgs= [];
-			}
-			$scope.currentPArgs.push(response.data);
-			}else{
-				if($scope.currentNArgs =='undefined'){
-					$scope.currentNArgs= [];
+			if (argument.content.proInd === 'Y') {
+				if ($scope.currentPArgs == 'undefined') {
+					$scope.currentPArgs = [];
 				}
-				$scope.currentNArgs.push(response.data);
+				$scope.currentPArgs.push(response.data[0]);
+			} else {
+				if ($scope.currentNArgs === 'undefined') {
+					$scope.currentNArgs = [];
+				}
+				$scope.currentNArgs.push(response.data[0]);
 			}
 		});
 	}

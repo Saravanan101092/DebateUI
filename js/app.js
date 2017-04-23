@@ -19,7 +19,7 @@ app.config(function($routeProvider,$locationProvider) {
         controller : "MainController"
     })
     .when("/debate/:debateId",{
-    	templateUrl :"view/debate.html",
+    	templateUrl :"view/debate2.html",
     	controller : "DebateController"
     });
 });

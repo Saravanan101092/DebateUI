@@ -1,0 +1,53 @@
+<div ng-controller="DebateController">
+<div class="debate-panel">
+		<div>
+            <div class="panel panel-success">
+                <h3 class="page-header" ng-show="currentDebate.question">{{currentDebate.question}}
+                    <small ng-show="currentDebate.content.desc">{{currentDebate.content.desc}}</small>
+                </h3>
+            </div>
+        </div>
+	</div>
+	<div class = "row">
+		<div class="for-panel panel">
+			<div class="panel-heading"><strong>FOR</strong></div>
+	<div class="col-sm-4" id="left">
+
+				<div class="jumbotron" ng-model="currentPArgs">
+     <div class="dArg" ng-repeat="arg in currentPArgs">
+	 <strong>Saru</strong>
+					<p lang="en">{{arg.content.text}}</p>
+				</div>
+  </div>    </div>  
+
+			<div class="form-group input-group ip">
+				<textarea class="form-control" rows="3" id="comment"
+					ng-model="txtPArg" placeholder="Make your point here"></textarea>
+				<span class="input-group-addon btn btn-success"
+					ng-click="addArgument(txtPArg,'Y')">Enter</span>
+			</div>
+  </div>
+
+  <div class="ag-panel panel">
+			<div  class="panel-heading"><strong>AGAINST</strong></div>
+  <div class="col-sm-4" id="right">
+
+			<div class="jumbotron" ng-model="currentNArgs">
+      <div class="dArg" ng-repeat="arg in currentNArgs">
+	  <strong>Saru</strong>
+					<p lang="en">{{arg.content.text}}</p>
+				</div>
+  </div>
+  </div>
+  
+			<div class="form-group input-group ip">
+				<textarea class="form-control" rows="3" id="comment"
+					ng-model="txtNArg" placeholder="Make your point here"></textarea>
+				<span class="input-group-addon btn btn-success"
+					ng-click="addArgument(txtNArg,'N')">Enter</span>
+			</div>
+   </div>
+    </div>
+	
+</div>
+
