@@ -12,8 +12,8 @@ app.controller('MainController',['$http','$scope','$location',function($http, $s
 		console.log("inside submit debate method:" + JSON.stringify($scope.debate));
 		var result = $http.post('http://localhost:8087/saru/debates',$scope.debate).then(function(response){
 			console.log("response object:"+JSON.stringify(response));
-			$scope.currentDebate=response.data;
-			$location.path('/debate/:id'+response.data._id);
+			$scope.currentDebate=response.data[0];
+			$location.path('/debate/'+response.data[0]._id);
 		});
 	console.log("response is"+JSON.stringify($scope.resultdebate));
 	}
