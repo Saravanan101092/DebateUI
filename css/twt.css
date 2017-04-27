@@ -3,7 +3,7 @@
   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 12px;
   font-weight: bold;
-  line-height: 16px;
+  line-height: 28px;
   border-color: #eee #ddd #bbb;
   border-radius: 5px;
   border-style: solid;
@@ -12,6 +12,7 @@
   margin: 10px 5px;
   padding: 0 16px 16px 16px;
   max-width: 468px;
+  word-wrap: break-word;
 }
 
 .dArg p {
@@ -29,5 +30,5 @@
 
 .dArg a:hover,
 .dArg a:focus {
-  text-decoration: underline;
+  text-decoration: inherit;
 }
